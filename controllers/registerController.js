@@ -27,7 +27,7 @@ module.exports.postSignUpUser = async function (req, res) {
             req.flash('error', 'Account already Exists');
             return res.redirect('/user/signup');
         }
-        bycript.genSalt(10, (err, salt) => {
+        bycript.genSalt(8, (err, salt) => {
             bycript.hash(password, salt, async (err, hash) => {
                 if (err) {
                     req.flash('error', err.message);
@@ -100,10 +100,9 @@ module.exports.postSignUpDeveloper = async function(req, res) {
             req.flash('error', 'Account already Exists');
             return res.redirect('/developer/signup');
         }
-        bycript.genSalt(10, (err, salt) => {
+        bycript.genSalt(8, (err, salt) => {
             bycript.hash(password, salt, async (err, hash) => {
                 if (err) {
-                    console.log(err);
                     req.flash('error', err.message);
                     return res.redirect('/developer/signup');
                 }
@@ -121,7 +120,6 @@ module.exports.postSignUpDeveloper = async function(req, res) {
             });
         });
     } catch (err) {
-        console.log(err);
         req.flash('error', err.message);
         res.redirect('/developer/signup');
     }

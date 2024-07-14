@@ -2,8 +2,8 @@ const asUser = document.querySelector('.as-user');
 const asDeveloper = document.querySelector('.as-developer');
 
 asUser.addEventListener('click', () => {
-    document.cookie = "iam=user";
+    document.cookie = 'iam=user';
 })
 asDeveloper.addEventListener('click', () => {
-    document.cookie = "iam=developer";
+    document.cookie = 'iam=developer';
 })

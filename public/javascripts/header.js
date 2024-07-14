@@ -7,10 +7,10 @@ biggerHeader.classList.add('hidden');
 biggerHeader.classList.add('-translate-x-full');
 
 logoImg.classList.add('animate-spin');
-logoImg.addEventListener("mouseover", () => {
+logoImg.addEventListener('mouseover', () => {
     logoImg.classList.remove('animate-spin');
 })
-logoImg.addEventListener("mouseout", () => {
+logoImg.addEventListener('mouseout', () => {
     logoImg.classList.add('animate-spin');
 });
 
