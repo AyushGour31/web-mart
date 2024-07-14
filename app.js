@@ -1,14 +1,13 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
 const expressSession = require('express-session');
 
 require('dotenv').config();
 require('./configurations/mongoose-connection');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/usersRouter');
-const developersRouter = require('./routes/developersRouter');
 
 const app = express();
 const PORT = process.env.PORT ;
@@ -21,17 +20,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(
-//   expressSession({
-//       resave: false,
-//       saveUninitialized: false,
-//       secret: false,
-//   })
-// );
+app.use(
+  expressSession({
+      resave: false,
+      saveUninitialized: false,
+      secret: process.env.EXPRESS_SESSION_SECRET,
+  })
+);
+app.use(flash());
 
 // routes
-app.use('/', indexRouter);
-app.use('/user', usersRouter);
-app.use('/developer', developersRouter);
+app.use(indexRouter);
+
 
 app.listen(PORT);
