@@ -5,8 +5,7 @@ const {
   postSignUpUser,
   getSignInUser,
   postSignInUser,
-  getSignOutUser,
-} = require("../controllers/registerController");
+} = require("../../controllers/registerController");
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
@@ -19,6 +18,5 @@ router.post("/signup", postSignUpUser);
 router.get("/signin", getSignInUser);
 router.post("/signin", postSignInUser);
 
-router.get("/signout", getSignOutUser);
 
 module.exports = router;

@@ -5,8 +5,7 @@ const {
   postSignUpDeveloper,
   getSignInDeveloper,
   postSignInDeveloper,
-  getSignOutDeveloper,
-} = require("../controllers/registerController");
+} = require("../../controllers/registerController");
 
 /* GET developers listing. */
 router.get("/", function (req, res) {
@@ -19,6 +18,5 @@ router.post("/signup", postSignUpDeveloper);
 router.get("/signin", getSignInDeveloper);
 router.post("/signin", postSignInDeveloper);
 
-router.get("/signout", getSignOutDeveloper);
 
 module.exports = router;
