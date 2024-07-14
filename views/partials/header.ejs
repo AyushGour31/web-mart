@@ -1,23 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Register</title>
+
     </head>
     <body class="">
-        <header class="bg-zinc-900">
-            <div class="container flex justify-between items-center m-auto p-2">
-                <div class="logo text-zinc-100 p-3">
-                    <img src="" alt="Web Mart">
+        <div class="div flex">
+
+            <header>
+
+                <!-- smaller header -->
+                <div class="smaller-header sticky top-0 left-0 bg-[var(--first)] text-[var(--second)] shadow shadow-white flex flex-col justify-between items-center w-24 h-screen p-2">
+                    <nav>
+                        <div class="logo flex justify-center items-center p-3">
+                            <img class="w-24 rounded-full" src="/images/web-mart-logo.svg" alt="WM">
+                        </div>
+                        
+                        <hr class="m-2" />
+                        
+                        <div class="flex flex-col justify-between items-center">
+                            <a class="m-3" href="/register"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-user"></i></a>
+                            
+                            <hr class="px-8 m-2" />
+                            
+                            <a class="m-3" href="/"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-house"></i></a>
+                            <a class="m-3" href="/apps"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-puzzle-piece"></i></a>
+                            <a class="m-3" href="/games"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-gamepad"></i></a>
+                            <a class="m-3" href="/movies"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-film"></i></a>
+                            <a class="m-3" href="/books"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-book"></i></a>
+                            <a class="m-3" href="/music"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-music"></i></a>
+                        </div>
+                    </nav>
+                    
+                    <nav class="flex flex-col justify-between items-center">
+                        <hr class="px-8 m-2" />
+
+                        <a class="p-3" href=""><i class="text-xl hover:text-[var(--logo)] fa-solid fa-question"></i></a>
+                        <a class="p-3" href=""><i class="text-xl hover:text-[var(--logo)] fa-solid fa-gear"></i></a>
+                        <a class="p-3" href="/logout"><i class="text-xl hover:text-[var(--logo)] fa-solid fa-right-from-bracket"></i></a>
+                    </nav>
                 </div>
-                
-                <nav class="flex justify-between items-center">
-                    <a class="text-zinc-100 p-3" href="">App</a>
-                    <a class="text-zinc-100 p-3" href="">Game</a>
-                    <a class="text-zinc-100 p-3" href="/register">Sign-In</a>
-                </nav>
-            </div>
-        </header>
-        
+
+                <!-- bigger header -->
+                <div class="bigger-header sticky top-0 left-0 bg-[var(--first)] text-[var(--second)] shadow shadow-white flex flex-col justify-between items-center w-56 h-screen p-2">
+                    <nav>
+                        <div class="logo flex justify-center items-center p-3">
+                            <img class="logo-img w-10 rounded-full" src="/images/web-mart-logo.svg" alt="WM">
+                            <h2 class="text-xl font-bold ms-2">Web <span class="text-[var(--logo)]">Mart</span></h2>
+                        </div>
+                        
+                        <hr class="m-2" />
+                        
+                        <div class="flex flex-col justify-between items-center">
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/register">
+                                <i class="ms-5 fa-solid fa-user"></i>
+                                <span class="w-24">Account</span>
+                            </a>
+                            
+                            <hr class="px-24 m-2" />
+                            
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/">
+                                <i class="ms-5 fa-solid fa-house"></i>
+                                <span class="w-24">Home</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/apps">
+                                <i class="ms-5 fa-solid fa-puzzle-piece"></i>
+                                <span class="w-24">Apps</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/games">
+                                <i class="ms-5 fa-solid fa-gamepad"></i>
+                                <span class="w-24">Games</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/movies">
+                                <i class="ms-5 fa-solid fa-film"></i>
+                                <span class="w-24">Movies</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/books">
+                                <i class="ms-5 fa-solid fa-book"></i>
+                                <span class="w-24">Books</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/music">
+                                <i class="ms-5 fa-solid fa-music"></i>
+                                <span class="w-24">Music</span>
+                            </a>
+                        </div>
+                    </nav>
+                    
+                    <nav>
+                        <div class="flex flex-col justify-between items-center p-3">
+                            <hr class="px-24 m-2" />
+
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="">
+                                <i class="ms-5 fa-solid fa-question"></i>
+                                <span class="w-24">Help</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="">
+                                <i class="ms-5 fa-solid fa-gear"></i>
+                                <span class="w-24">Settings</span>
+                            </a>
+                            <a class="flex justify-around items-center text-lg hover:text-[var(--logo)] m-3 w-full" href="/logout">
+                                <i class="ms-5 fa-solid fa-right-from-bracket"></i>
+                                <span class="w-24">Logout</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+
+            </header>
+            
+            <main class="w-full min-h-screen">

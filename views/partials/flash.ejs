@@ -1,0 +1,12 @@
+
+    <div class="flash">
+        <% if(success.length > 0){ %>
+            <div id="flashSuccess" class="transition-all ease-linear delay-150 absolute top-8 right-0 translate-x-full px-3 py-2 shadow shadow-lg rounded-xl bg-green-600">
+                <span class="inline-block mt-1 mb-1 text-white"><%= success %></span>
+            </div>
+        <% } else if(error.length > 0){ %>
+            <div id="flashError" class="transition-all ease-linear delay-150 absolute top-8 right-0 translate-x-full px-3 py-2 shadow shadow-lg rounded-xl bg-red-600">
+                <span class="inline-block mt-1 mb-1 text-white"><%= error %></span>
+            </div>
+        <% } %>
+    </div>
