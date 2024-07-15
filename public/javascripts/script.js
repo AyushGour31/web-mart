@@ -1,9 +1,14 @@
-const asUser = document.querySelector('.as-user');
-const asDeveloper = document.querySelector('.as-developer');
 
-asUser.addEventListener('click', () => {
-    document.cookie = 'iam=user';
-})
-asDeveloper.addEventListener('click', () => {
-    document.cookie = 'iam=developer';
-})
+switch (window.location.pathname) {
+    case '/developer/signup':
+    case '/developer/signin':
+        document.cookie = 'iam=developler';
+        break;
+    case '/user/signup':
+    case '/user/signin':
+        document.cookie = 'iam=user';
+        break;
+    default:
+        console.log('def');
+        break;
+}
