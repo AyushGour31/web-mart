@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { isLoggedIn } = require('../middlewares/authentication');
+const {
+  isUserLoggedIn,
+  isDeveloperLoggedIn
+ } = require('../middlewares/authentication');
 const { getHome } = require('../controllers/featuresController');
 const {
   getRegister,
@@ -8,7 +11,7 @@ const {
 } = require('../controllers/registerController');
 
 /* GET home page. */
-router.get('/', isLoggedIn, getHome);
+router.get('/', [ isUserLoggedIn, isDeveloperLoggedIn ], getHome);
 
 router.get('/register', getRegister);
 router.get('/logout', getSignout);

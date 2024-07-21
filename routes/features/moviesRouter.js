@@ -1,9 +1,12 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { isLoggedIn } = require("../../middlewares/authentication");
-const { getMovies } = require("../../controllers/featuresController");
+const {
+  isUserLoggedIn,
+  isDeveloperLoggedIn,
+} = require('../../middlewares/authentication');
+const { getMovies } = require('../../controllers/featuresController');
 
 /* GET home page. */
-router.get("/", isLoggedIn, getMovies);
+router.get('/', [ isUserLoggedIn, isDeveloperLoggedIn ], getMovies);
 
 module.exports = router;
