@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { isLoggedIn } = require('../../middlewares/authentication');
+const { 
+    isUserLoggedIn,
+    isDeveloperLoggedIn
+} = require('../../middlewares/authentication');
 const { getMusic } = require('../../controllers/featuresController');
 
 /* GET home page. */
-router.get('/', isLoggedIn, getMusic);
+router.get('/', [ isUserLoggedIn, isDeveloperLoggedIn ], getMusic);
 
 module.exports = router;

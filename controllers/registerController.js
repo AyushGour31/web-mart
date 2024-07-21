@@ -162,6 +162,5 @@ module.exports.getSignout = function (req, res) {
     req.flash('success', 'Logged out Successfully');
     res
         .cookie('token', '')
-        .cookie('iam', '')
         .redirect('/register');
 }

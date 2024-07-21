@@ -8,6 +8,14 @@ mongoose
   
 module.exports = mongoose.connection;
 
-// on terminal -> to start debugging
-// export DEBUG=development:*
-// export DEBUG=
+/*
+  on terminal -> to start debugging 
+
+  for MAC
+    export DEBUG=development:*
+    export DEBUG=
+
+  for WINDOW
+    set DEBUG=development:*
+    set DEBUG=
+*/
