@@ -1,25 +1,51 @@
 <%- include('../partials/head') %>
     <%- include('../partials/header') %>
-    
-            <%- include('../partials/flash') %>
-            
-            <div class="drop-shadow-2xl flex justify-center items-center h-screen">
-                <div class="signin rounded-lg p-3 bg-gray-900 text-zinc-100 w-1/4 h-96">
-                    <div class="signin-heading m-2">
-                        <h2 class="m-3 text-2xl">Developer Sign In</h2>
-                        <form autocomplete="off" action="/developer/signin" method="post">
-                            <input class="bg-gray-800 block w-full px-3 py-2 mb-3 rounded-md border-[1px] border-zinc-700"
-                            type="email" placeholder="Email" name="email">
-                            <input class="bg-gray-800 block w-full px-3 py-2 mb-3 rounded-md border-[1px] border-zinc-700"
-                            type="password" placeholder="Password" name="password">
-                            <input class="px-4 rounded-full py-2 mb-3 bg-blue-500 text-white" type="submit"
-                            value="Login">
-                        </form>
-                        <a href="/developer/signup" class="rounded-full py-2 px-5 my-5 bg-zinc-100 text-gray-900">Create an Account</a>
-                    </div>
+
+        <%- include('../partials/flash') %>
+
+        <div class="flex items-center justify-center min-h-dvh bg-gray-100">
+            <div class="w-full max-w-md p-8 sm:p-10 bg-white rounded-3xl shadow-2xl" data-v0-t="card">
+                <div class="flex flex-col p-6 space-y-4 text-center">
+                    <h3
+                        class="text-3xl font-extrabold bg-clip-text bg-gradient-to-r from-logo to-indigo-500">
+                        Developer Sign In
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Don't have an account?
+                        <a class="font-semibold text-indigo-600 hover:text-indigo-800 hover:underline" href="/developer/signup">
+                            Sign up
+                        </a>
+                    </p>
+                </div>
+                <div class="p-6 space-y-6">
+                    <form action="/developer/signin" method="post" class="grid gap-4">
+                        <div>
+                            <label class="text-sm font-semibold text-gray-800" for="email">
+                                Email
+                            </label>
+                            <input
+                                class="mt-2 h-12 w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:ring-offset-1"
+                                id="email" name="email" placeholder="Enter your email" required type="email" />
+                        </div>
+                        <div>
+                            <label class="text-sm font-semibold text-gray-800" for="password">
+                                Password
+                            </label>
+                            <input
+                                class="mt-2 h-12 w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:ring-offset-1"
+                                id="password" name="password" placeholder="Enter your password" type="password" required />
+                        </div>
+                        <div>
+                            <button
+                                class="w-full mt-4 h-12 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold text-lg hover:from-indigo-600 hover:to-blue-600 focus:ring-4 focus:ring-indigo-300"
+                                type="submit">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
 
-        
     <%- include('../partials/footer') %>
 <%- include('../partials/foot') %>

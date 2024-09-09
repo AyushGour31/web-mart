@@ -14,6 +14,12 @@ const developerSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    items: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'item',
+        },
+    ],
 }, {
     timestamps: true
 })

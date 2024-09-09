@@ -1,3 +1,4 @@
+const itemsModel = require('../models/itmes-model');
 
 // '*'
 module.exports.defaultRouter = function (req, res) {
@@ -11,6 +12,34 @@ module.exports.getHome = function (req, res) {
     const error = req.flash('error');
     const success = req.flash('success');
     res.render('home', { page: 'Home', error, success });
+}
+
+// '/add-items'
+module.exports.getAddItems = (req, res) => {
+    const error = req.flash('error');
+    const success = req.flash('success');
+    res.render('features/addItems', { page: 'Add Items', error, success });
+}
+module.exports.postAddItems = async (req, res) => {
+    // const error = req.flash('error');
+    // const success = req.flash('success');
+    // res.render('features/addItems', { page: 'Add Items', error, success });
+
+    const { category, itemname, imgurl, description, files } = req.body;
+    const item = await itemsModel.create({
+        category,
+        itemname,
+        imgurl,
+        description,
+        files:[
+            {
+                filename: files.filename,
+                fileurl: files.fileurl,
+            },
+        ]
+    })
+
+    res.send(item);
 }
 
 // '/apps'
